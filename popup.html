@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ChatGPT Region Cloak</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main class="panel">
+      <header class="app-bar">
+        <div class="identity">
+          <img class="app-icon" src="assets/region.svg" alt="">
+          <h1>ChatGPT Region Cloak</h1>
+        </div>
+        <label class="switch" aria-label="Enable region alignment">
+          <input id="enabled" type="checkbox" role="switch" checked>
+          <span class="switch-track" aria-hidden="true">
+            <span class="switch-thumb"></span>
+          </span>
+        </label>
+      </header>
+
+      <section class="status-card" aria-live="polite">
+        <span class="status-dot" aria-hidden="true"></span>
+        <div>
+          <p class="status-title" id="status-title">Starting…</p>
+          <p class="status-detail" id="status-detail">Applying settings</p>
+        </div>
+      </section>
+
+      <section class="settings" aria-labelledby="region-heading">
+        <h2 id="region-heading">Region</h2>
+        <div class="settings-grid">
+          <label class="select-field">
+            <span class="field-label">Country or region</span>
+            <select id="country" aria-label="Country or region"></select>
+            <span class="select-arrow" aria-hidden="true"></span>
+          </label>
+          <label class="select-field">
+            <span class="field-label">Language</span>
+            <select id="locale" aria-label="Browser language"></select>
+            <span class="select-arrow" aria-hidden="true"></span>
+          </label>
+          <label class="select-field">
+            <span class="field-label">Time zone</span>
+            <select id="time-zone" aria-label="Time zone"></select>
+            <span class="select-arrow" aria-hidden="true"></span>
+          </label>
+        </div>
+      </section>
+
+      <section class="site-tools" aria-labelledby="site-data-heading">
+        <h2 id="site-data-heading">Site data</h2>
+        <button class="reset-button" id="reset-button" type="button">Reset ChatGPT</button>
+      </section>
+    </main>
+
+    <dialog id="reset-dialog" aria-labelledby="reset-dialog-title">
+      <div class="dialog-content">
+        <h3 id="reset-dialog-title">Reset ChatGPT?</h3>
+        <p>This signs you out of ChatGPT and may sign you out of other OpenAI sites. Cookies, site storage, caches, and service workers will be cleared. Unsaved drafts may be lost. Extension settings are kept.</p>
+        <div class="dialog-actions">
+          <button class="text-button" id="cancel-reset" type="button">Cancel</button>
+          <button class="filled-error-button" id="confirm-reset" type="button">Reset</button>
+        </div>
+      </div>
+    </dialog>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

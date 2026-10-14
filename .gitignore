@@ -1,0 +1,30 @@
+/doc/
+
+# Release packages and local visual previews
+/*.zip
+/popup-preview*.png
+
+# Dependencies, builds, and logs
+node_modules/
+coverage/
+dist/
+build/
+*.log
+
+# Browser profiles and extension signing files
+.chrome-*/
+*.crx
+*.pem
+*.key
+
+# Local environment files
+.env
+.env.*
+!.env.example
+
+# Editor and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+Desktop.ini
